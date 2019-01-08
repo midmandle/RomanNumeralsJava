@@ -5,42 +5,44 @@ import java.util.Map;
 
 public class NumeralConverter {
 
-    public static final Character NUMERAL_V = 'V';
-    public static final Character NUMERAL_I = 'I';
-    public static final Character NUMERAL_X = 'X';
-    private static final Character NUMERAL_L = 'L';
-    private static final Character NUMERAL_C = 'C';
+    private final Character NUMERAL_V = 'V';
+    private final Character NUMERAL_I = 'I';
+    private final Character NUMERAL_X = 'X';
+    private final Character NUMERAL_L = 'L';
+    private final Character NUMERAL_C = 'C';
 
-    public static Map<Character, Integer> numeralToValueMap = new HashMap<Character, Integer>();
+    private Map<Character, Integer> numeralToValueMap = new HashMap<Character, Integer>();
 
-    public static int convert(String numerals) {
-        NumeralConverter.initialiseNumeralToValueMap();
+    public NumeralConverter() {
+        initialiseNumeralToValueMap();
+    }
+
+    public int convert(String numerals) {
         return sumDecimalValues(calculateDecimalValue(numerals));
     }
 
-    public static void initialiseNumeralToValueMap() {
-        NumeralConverter.numeralToValueMap.put(NUMERAL_I, 1);
-        NumeralConverter.numeralToValueMap.put(NUMERAL_V, 5);
-        NumeralConverter.numeralToValueMap.put(NUMERAL_X, 10);
-        NumeralConverter.numeralToValueMap.put(NUMERAL_L, 50);
-        NumeralConverter.numeralToValueMap.put(NUMERAL_C, 100);
+    private void initialiseNumeralToValueMap() {
+        numeralToValueMap.put(NUMERAL_I, 1);
+        numeralToValueMap.put(NUMERAL_V, 5);
+        numeralToValueMap.put(NUMERAL_X, 10);
+        numeralToValueMap.put(NUMERAL_L, 50);
+        numeralToValueMap.put(NUMERAL_C, 100);
     }
 
-    public static List<Integer> calculateDecimalValue(String numerals) {
+    private List<Integer> calculateDecimalValue(String numerals) {
         List<Integer> decimals = convertNumeralsToDecimalList(numerals);
 
         for (int i = 0; i < decimals.size() -1; i++) {
             Integer currentDecimal = decimals.get(i);
             Integer nextDecimal = decimals.get(i+1);
-            if (decimalShouldBeNegative(currentDecimal, nextDecimal)) {
+            if (decimalShouldBeNegative(currentDecimal, nextDecimal))
                 decimals = replaceDecimalWithNegative(decimals, i);
-            }
         }
         System.out.println(decimals);
         return decimals;
     }
 
-    public static List<Integer> convertNumeralsToDecimalList(String numerals) {
+    private List<Integer> convertNumeralsToDecimalList(String numerals) {
         List<Integer> decimals = new ArrayList<Integer>();
 
         for (Character numeral: numerals.toCharArray()) {
@@ -51,7 +53,7 @@ public class NumeralConverter {
         return decimals;
     }
 
-    public static List<Integer> replaceWithNegativeDecimalWhereNecessary(List<Integer> decimals) {
+    private List<Integer> replaceWithNegativeDecimalWhereNecessary(List<Integer> decimals) {
         for (int i = 0; i < decimals.size() -1; i++) {
             Integer currentDecimal = decimals.get(i);
             Integer nextDecimal = decimals.get(i+1);
@@ -62,23 +64,23 @@ public class NumeralConverter {
         return decimals;
     }
 
-    public static boolean decimalShouldBeNegative(Integer currentDecimal, Integer nextDecimal) {
+    private boolean decimalShouldBeNegative(Integer currentDecimal, Integer nextDecimal) {
        return currentDecimal < nextDecimal;
     }
 
-    public static List<Integer> replaceDecimalWithNegative(List<Integer> decimals, int indexToChangeToNegative) {
+    private List<Integer> replaceDecimalWithNegative(List<Integer> decimals, int indexToChangeToNegative) {
         Integer currentDecimal = decimals.get(indexToChangeToNegative);
         decimals.set(indexToChangeToNegative, -currentDecimal);
 
         return decimals;
     }
 
-    public static Integer convertNumeralToDecimal(Character numeral) {
+    private Integer convertNumeralToDecimal(Character numeral) {
         return numeralToValueMap.get(numeral);
     }
 
 
-    public static int sumDecimalValues(List<Integer> decimals) {
+    private int sumDecimalValues(List<Integer> decimals) {
         int counter = 0;
         for (Integer decimal : decimals) {
             counter += decimal;

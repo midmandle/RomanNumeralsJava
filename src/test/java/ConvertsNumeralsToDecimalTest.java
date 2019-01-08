@@ -31,6 +31,7 @@ public class ConvertsNumeralsToDecimalTest {
             "C, 100",
     })
     public void converts_numerals_to_decimal(String numeral, int decimal) {
-        assertEquals(decimal, NumeralConverter.convert(numeral));
+        NumeralConverter numeralConverter = new NumeralConverter();
+        assertEquals(decimal, numeralConverter.convert(numeral));
     }
 }
