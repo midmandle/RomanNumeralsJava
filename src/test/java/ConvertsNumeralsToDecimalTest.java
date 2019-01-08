@@ -29,6 +29,8 @@ public class ConvertsNumeralsToDecimalTest {
             "XLV, 45",
             "XLIV, 44",
             "C, 100",
+            "CCC, 300",
+            "CD, 400",
     })
     public void converts_numerals_to_decimal(String numeral, int decimal) {
         NumeralConverter numeralConverter = new NumeralConverter();

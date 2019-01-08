@@ -10,6 +10,7 @@ public class NumeralConverter {
     private final Character NUMERAL_X = 'X';
     private final Character NUMERAL_L = 'L';
     private final Character NUMERAL_C = 'C';
+    private final Character NUMERAL_D = 'D';
 
     private Map<Character, Integer> numeralToValueMap = new HashMap<Character, Integer>();
 
@@ -27,6 +28,7 @@ public class NumeralConverter {
         numeralToValueMap.put(NUMERAL_X, 10);
         numeralToValueMap.put(NUMERAL_L, 50);
         numeralToValueMap.put(NUMERAL_C, 100);
+        numeralToValueMap.put(NUMERAL_D, 500);
     }
 
     private List<Integer> calculateDecimalValue(String numerals) {
@@ -38,7 +40,7 @@ public class NumeralConverter {
             if (decimalShouldBeNegative(currentDecimal, nextDecimal))
                 decimals = replaceDecimalWithNegative(decimals, i);
         }
-        
+
         return decimals;
     }
 
