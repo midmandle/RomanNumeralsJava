@@ -17,12 +17,6 @@ public class NumeralConverter {
 
     public static int convert(String numerals) {
         NumeralConverter.initialiseNumeralToValueMap();
-        if(numerals.equals("" + NUMERAL_X + NUMERAL_I + NUMERAL_V))
-            return 14;
-        if(numerals.equals("" + NUMERAL_I + NUMERAL_X))
-            return 9;
-        if(numerals.equals("" + NUMERAL_I + NUMERAL_V))
-            return 4;
         return sumDecimalValues(convertToDecimalList(numerals));
     }
 
@@ -40,6 +34,16 @@ public class NumeralConverter {
             Integer decimal = convertNumeralToDecimal(numeral);
             decimals.add(decimal);
         }
+
+        for (int i = 0; i < decimals.size() -1; i++) {
+            Integer currentDecimal = decimals.get(i);
+            Integer nextDecimal = decimals.get(i+1);
+            if (currentDecimal < nextDecimal) {
+                decimals.remove(i);
+                decimals.add(-currentDecimal);
+            }
+        }
+        System.out.println(decimals);
         return decimals;
     }
 
