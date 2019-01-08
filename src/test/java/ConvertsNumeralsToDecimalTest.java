@@ -32,6 +32,7 @@ public class ConvertsNumeralsToDecimalTest {
             "CCC, 300",
             "CD, 400",
             "M, 1000",
+            "MMCDXCIX, 2499",
     })
     public void converts_numerals_to_decimal(String numeral, int decimal) {
         NumeralConverter numeralConverter = new NumeralConverter();
