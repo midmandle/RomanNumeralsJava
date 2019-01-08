@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ConvertsSingleNumeralToDecimalTest {
+public class ConvertsNumeralsToDecimalTest {
     @Test
     public void converts_numeral_I_to_decimal_1() {
         assertEquals(1, NumeralConverter.convert("I"));
