@@ -14,21 +14,21 @@ public class NumeralConverter {
         if(numerals.equals("" + NUMERAL_X + NUMERAL_I + NUMERAL_V))
             return 14;
         if(numerals.equals("" + NUMERAL_X + NUMERAL_I + NUMERAL_I + NUMERAL_I))
-            return 13;
+            return numeralToValueMap.get(NUMERAL_X) + numeralToValueMap.get(NUMERAL_I) + numeralToValueMap.get(NUMERAL_I) + numeralToValueMap.get(NUMERAL_I);
         if(numerals.equals("" + NUMERAL_X + NUMERAL_I + NUMERAL_I))
-            return 12;
+            return numeralToValueMap.get(NUMERAL_X) + numeralToValueMap.get(NUMERAL_I) + numeralToValueMap.get(NUMERAL_I);
         if(numerals.equals("" + NUMERAL_X + NUMERAL_I))
-            return 11;
+            return numeralToValueMap.get(NUMERAL_X) + numeralToValueMap.get(NUMERAL_I);
         if(numerals.equals("" + NUMERAL_X))
             return numeralToValueMap.get(NUMERAL_X);
         if(numerals.equals("" + NUMERAL_I + NUMERAL_X))
             return 9;
         if(numerals.equals("" + NUMERAL_V + NUMERAL_I + NUMERAL_I + NUMERAL_I))
-            return 8;
+            return numeralToValueMap.get(NUMERAL_V) + numeralToValueMap.get(NUMERAL_I) + numeralToValueMap.get(NUMERAL_I) + numeralToValueMap.get(NUMERAL_I);
         if(numerals.equals("" + NUMERAL_V + NUMERAL_I + NUMERAL_I))
-            return 7;
+            return numeralToValueMap.get(NUMERAL_V) + numeralToValueMap.get(NUMERAL_I) + numeralToValueMap.get(NUMERAL_I);
         if(numerals.equals("" + NUMERAL_V + NUMERAL_I))
-            return 6;
+            return numeralToValueMap.get(NUMERAL_V) + numeralToValueMap.get(NUMERAL_I);
         if(numerals.equals("" + NUMERAL_I + NUMERAL_V))
             return 4;
         if(numerals.equals("" + NUMERAL_V))
