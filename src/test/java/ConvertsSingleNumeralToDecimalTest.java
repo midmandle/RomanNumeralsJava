@@ -17,4 +17,9 @@ public class ConvertsSingleNumeralToDecimalTest {
     public void converts_numerals_III_to_decimal_3() {
         assertEquals(3, NumeralConverter.convert("III"));
     }
+
+    @Test
+    public void converts_numeral_V_to_decimal_5() {
+        assertEquals(5, NumeralConverter.convert("V"));
+    }
 }
