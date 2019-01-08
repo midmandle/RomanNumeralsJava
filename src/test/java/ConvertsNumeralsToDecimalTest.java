@@ -22,6 +22,7 @@ public class ConvertsNumeralsToDecimalTest {
             "X, 10",
             "XI, 11",
             "XII, 12",
+            "XIII, 13",
     })
     public void converts_numerals_to_decimal(String numeral, int decimal) {
         assertEquals(decimal, NumeralConverter.convert(numeral));

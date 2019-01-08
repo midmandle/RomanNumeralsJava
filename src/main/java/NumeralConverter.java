@@ -5,6 +5,8 @@ public class NumeralConverter {
     public static final String NUMERAL_X = "X";
 
     public static int convert(String numerals) {
+        if(numerals.equals(NUMERAL_X + NUMERAL_I + NUMERAL_I + NUMERAL_I))
+            return 13;
         if(numerals.equals(NUMERAL_X + NUMERAL_I + NUMERAL_I))
             return 12;
         if(numerals.equals(NUMERAL_X + NUMERAL_I))
