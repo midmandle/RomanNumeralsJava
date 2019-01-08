@@ -9,6 +9,7 @@ public class NumeralConverter {
     public static final Character NUMERAL_I = 'I';
     public static final Character NUMERAL_X = 'X';
     private static final Character NUMERAL_L = 'L';
+    private static final Character NUMERAL_C = 'C';
 
     public static Map<Character, Integer> numeralToValueMap = new HashMap<Character, Integer>();
 
@@ -22,6 +23,7 @@ public class NumeralConverter {
         NumeralConverter.numeralToValueMap.put(NUMERAL_V, 5);
         NumeralConverter.numeralToValueMap.put(NUMERAL_X, 10);
         NumeralConverter.numeralToValueMap.put(NUMERAL_L, 50);
+        NumeralConverter.numeralToValueMap.put(NUMERAL_C, 100);
     }
 
     public static List<Integer> calculateDecimalValue(String numerals) {
