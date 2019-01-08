@@ -31,10 +31,10 @@ public class NumeralConverter {
             Integer currentDecimal = decimals.get(i);
             Integer nextDecimal = decimals.get(i+1);
             if (decimalShouldBeNegative(currentDecimal, nextDecimal)) {
-                replaceDecimalWithNegative(decimals, i);
+                decimals = replaceDecimalWithNegative(decimals, i);
             }
         }
-
+        System.out.println(decimals);
         return decimals;
     }
 
@@ -66,8 +66,7 @@ public class NumeralConverter {
 
     public static List<Integer> replaceDecimalWithNegative(List<Integer> decimals, int index) {
         Integer currentDecimal = decimals.get(index);
-        decimals.remove(index);
-        decimals.add(-currentDecimal);
+        decimals.set(index, -currentDecimal);
 
         return decimals;
     }

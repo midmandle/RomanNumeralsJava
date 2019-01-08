@@ -27,6 +27,7 @@ public class ConvertsNumeralsToDecimalTest {
             "L, 50",
             "XL, 40",
             "XLV, 45",
+            "XLIV, 44",
     })
     public void converts_numerals_to_decimal(String numeral, int decimal) {
         assertEquals(decimal, NumeralConverter.convert(numeral));
