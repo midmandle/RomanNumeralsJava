@@ -29,8 +29,7 @@ public class NumeralConverter {
             Integer currentDecimal = decimals.get(i);
             Integer nextDecimal = decimals.get(i+1);
             if (decimalShouldBeNegative(currentDecimal, nextDecimal)) {
-                decimals.remove(i);
-                decimals.add(-currentDecimal);
+                replaceDecimalWithNegative(decimals, i);
             }
         }
 
@@ -40,10 +39,20 @@ public class NumeralConverter {
     public static List<Integer> convertNumeralsToDecimalList(String numerals) {
         List<Integer> decimals = new ArrayList<Integer>();
 
-        for (Character numeral:
-                numerals.toCharArray()) {
+        for (Character numeral: numerals.toCharArray()) {
             Integer decimal = convertNumeralToDecimal(numeral);
             decimals.add(decimal);
+        }
+
+        return decimals;
+    }
+
+    public static List<Integer> replaceWithNegativeDecimalWhereNecessary(List<Integer> decimals) {
+        for (int i = 0; i < decimals.size() -1; i++) {
+            Integer currentDecimal = decimals.get(i);
+            Integer nextDecimal = decimals.get(i+1);
+            if (decimalShouldBeNegative(currentDecimal, nextDecimal))
+                decimals = replaceDecimalWithNegative(decimals, i);
         }
 
         return decimals;
@@ -53,6 +62,14 @@ public class NumeralConverter {
        return currentDecimal < nextDecimal;
     }
 
+    public static List<Integer> replaceDecimalWithNegative(List<Integer> decimals, int index) {
+        Integer currentDecimal = decimals.get(index);
+        decimals.remove(index);
+        decimals.add(-currentDecimal);
+
+        return decimals;
+    }
+
     public static Integer convertNumeralToDecimal(Character numeral) {
         return numeralToValueMap.get(numeral);
     }
@@ -60,10 +77,10 @@ public class NumeralConverter {
 
     public static int sumDecimalValues(List<Integer> decimals) {
         int counter = 0;
-        for (Integer decimal :
-                decimals) {
+        for (Integer decimal : decimals) {
             counter += decimal;
         }
+
         return counter;
     }
 }
