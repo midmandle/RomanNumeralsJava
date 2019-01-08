@@ -5,13 +5,13 @@ import java.util.Map;
 
 public class NumeralConverter {
 
-    private final Character NUMERAL_V = 'V';
-    private final Character NUMERAL_I = 'I';
-    private final Character NUMERAL_X = 'X';
-    private final Character NUMERAL_L = 'L';
-    private final Character NUMERAL_C = 'C';
-    private final Character NUMERAL_D = 'D';
-    private final Character NUMERAL_M = 'M';
+    private static final Character NUMERAL_V = 'V';
+    private static final Character NUMERAL_I = 'I';
+    private static final Character NUMERAL_X = 'X';
+    private static final Character NUMERAL_L = 'L';
+    private static final Character NUMERAL_C = 'C';
+    private static final Character NUMERAL_D = 'D';
+    private static final Character NUMERAL_M = 'M';
 
     private Map<Character, Integer> numeralToValueMap = new HashMap<Character, Integer>();
 
