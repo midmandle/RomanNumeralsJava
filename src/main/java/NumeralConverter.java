@@ -1,32 +1,44 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class NumeralConverter {
 
-    public static final String NUMERAL_V = "V";
-    public static final String NUMERAL_I = "I";
-    public static final String NUMERAL_X = "X";
+    public static final Character NUMERAL_V = 'V';
+    public static final Character NUMERAL_I = 'I';
+    public static final Character NUMERAL_X = 'X';
+
+    public static Map<Character, Integer> numeralToValueMap = new HashMap<Character, Integer>();
 
     public static int convert(String numerals) {
-        if(numerals.equals(NUMERAL_X + NUMERAL_I + NUMERAL_V))
+        NumeralConverter.initialiseNumeralToValueMap();
+        if(numerals.equals("" + NUMERAL_X + NUMERAL_I + NUMERAL_V))
             return 14;
-        if(numerals.equals(NUMERAL_X + NUMERAL_I + NUMERAL_I + NUMERAL_I))
+        if(numerals.equals("" + NUMERAL_X + NUMERAL_I + NUMERAL_I + NUMERAL_I))
             return 13;
-        if(numerals.equals(NUMERAL_X + NUMERAL_I + NUMERAL_I))
+        if(numerals.equals("" + NUMERAL_X + NUMERAL_I + NUMERAL_I))
             return 12;
-        if(numerals.equals(NUMERAL_X + NUMERAL_I))
+        if(numerals.equals("" + NUMERAL_X + NUMERAL_I))
             return 11;
-        if(numerals.equals(NUMERAL_X))
-            return 10;
-        if(numerals.equals(NUMERAL_I + NUMERAL_X))
+        if(numerals.equals("" + NUMERAL_X))
+            return numeralToValueMap.get(NUMERAL_X);
+        if(numerals.equals("" + NUMERAL_I + NUMERAL_X))
             return 9;
-        if(numerals.equals(NUMERAL_V + NUMERAL_I + NUMERAL_I + NUMERAL_I))
+        if(numerals.equals("" + NUMERAL_V + NUMERAL_I + NUMERAL_I + NUMERAL_I))
             return 8;
-        if(numerals.equals(NUMERAL_V + NUMERAL_I + NUMERAL_I))
+        if(numerals.equals("" + NUMERAL_V + NUMERAL_I + NUMERAL_I))
             return 7;
-        if(numerals.equals(NUMERAL_V + NUMERAL_I))
+        if(numerals.equals("" + NUMERAL_V + NUMERAL_I))
             return 6;
-        if(numerals.equals(NUMERAL_I + NUMERAL_V))
+        if(numerals.equals("" + NUMERAL_I + NUMERAL_V))
             return 4;
-        if(numerals.equals(NUMERAL_V))
-            return 5;
+        if(numerals.equals("" + NUMERAL_V))
+            return numeralToValueMap.get(NUMERAL_V);
         return numerals.length();
+    }
+
+    public static void initialiseNumeralToValueMap() {
+        NumeralConverter.numeralToValueMap.put(NUMERAL_I, 1);
+        NumeralConverter.numeralToValueMap.put(NUMERAL_V, 5);
+        NumeralConverter.numeralToValueMap.put(NUMERAL_X, 10);
     }
 }
