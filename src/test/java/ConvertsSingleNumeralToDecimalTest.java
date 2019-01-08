@@ -12,4 +12,9 @@ public class ConvertsSingleNumeralToDecimalTest {
     public void converts_numerals_II_to_decimal_2() {
         assertEquals(2, NumeralConverter.convert("II"));
     }
+
+    @Test
+    public void converts_numerals_III_to_decimal_3() {
+        assertEquals(3, NumeralConverter.convert("III"));
+    }
 }
