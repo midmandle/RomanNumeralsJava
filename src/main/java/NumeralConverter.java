@@ -1,5 +1,7 @@
 public class NumeralConverter {
     public static int convert(String numerals) {
+        if(numerals.equals("VII"))
+            return 7;
         if(numerals.equals("VI"))
             return 6;
         if(numerals.equals("IV"))

@@ -16,6 +16,7 @@ public class ConvertsNumeralsToDecimalTest {
             "V, 5",
             "IV, 4",
             "VI, 6",
+            "VII, 7",
     })
     public void converts_numerals_to_decimal(String numeral, int decimal) {
         assertEquals(decimal, NumeralConverter.convert(numeral));
