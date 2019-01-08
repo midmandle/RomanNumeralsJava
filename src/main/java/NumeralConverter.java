@@ -4,6 +4,8 @@ public class NumeralConverter {
     public static final String NUMERAL_I = "I";
 
     public static int convert(String numerals) {
+        if(numerals.equals(NUMERAL_I + 'X'))
+            return 9;
         if(numerals.equals(NUMERAL_V + NUMERAL_I + NUMERAL_I + NUMERAL_I))
             return 8;
         if(numerals.equals(NUMERAL_V + NUMERAL_I + NUMERAL_I))

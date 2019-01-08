@@ -18,6 +18,7 @@ public class ConvertsNumeralsToDecimalTest {
             "VI, 6",
             "VII, 7",
             "VIII, 8",
+            "IX, 9",
     })
     public void converts_numerals_to_decimal(String numeral, int decimal) {
         assertEquals(decimal, NumeralConverter.convert(numeral));
