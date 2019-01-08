@@ -1,4 +1,7 @@
 public class NumeralConverter {
+
+    public static final String NUMERAL_V = "V";
+
     public static int convert(String numerals) {
         if(numerals.equals("VIII"))
             return 8;
@@ -8,7 +11,7 @@ public class NumeralConverter {
             return 6;
         if(numerals.equals("IV"))
             return 4;
-        if(numerals.equals("V"))
+        if(numerals.equals(NUMERAL_V))
             return 5;
         return numerals.length();
     }
