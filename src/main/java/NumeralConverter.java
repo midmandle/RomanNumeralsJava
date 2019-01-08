@@ -64,9 +64,9 @@ public class NumeralConverter {
        return currentDecimal < nextDecimal;
     }
 
-    public static List<Integer> replaceDecimalWithNegative(List<Integer> decimals, int index) {
-        Integer currentDecimal = decimals.get(index);
-        decimals.set(index, -currentDecimal);
+    public static List<Integer> replaceDecimalWithNegative(List<Integer> decimals, int indexToChangeToNegative) {
+        Integer currentDecimal = decimals.get(indexToChangeToNegative);
+        decimals.set(indexToChangeToNegative, -currentDecimal);
 
         return decimals;
     }
