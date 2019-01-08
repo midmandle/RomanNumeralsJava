@@ -38,7 +38,7 @@ public class NumeralConverter {
             if (decimalShouldBeNegative(currentDecimal, nextDecimal))
                 decimals = replaceDecimalWithNegative(decimals, i);
         }
-        System.out.println(decimals);
+        
         return decimals;
     }
 
