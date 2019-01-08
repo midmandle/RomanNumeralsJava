@@ -28,7 +28,7 @@ public class NumeralConverter {
         for (int i = 0; i < decimals.size() -1; i++) {
             Integer currentDecimal = decimals.get(i);
             Integer nextDecimal = decimals.get(i+1);
-            if (currentDecimal < nextDecimal) {
+            if (decimalShouldBeNegative(currentDecimal, nextDecimal)) {
                 decimals.remove(i);
                 decimals.add(-currentDecimal);
             }
@@ -47,6 +47,10 @@ public class NumeralConverter {
         }
 
         return decimals;
+    }
+
+    public static boolean decimalShouldBeNegative(Integer currentDecimal, Integer nextDecimal) {
+       return currentDecimal < nextDecimal;
     }
 
     public static Integer convertNumeralToDecimal(Character numeral) {
