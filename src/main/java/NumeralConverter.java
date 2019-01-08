@@ -19,27 +19,11 @@ public class NumeralConverter {
         NumeralConverter.initialiseNumeralToValueMap();
         if(numerals.equals("" + NUMERAL_X + NUMERAL_I + NUMERAL_V))
             return 14;
-        if(numerals.equals("" + NUMERAL_X + NUMERAL_I + NUMERAL_I + NUMERAL_I))
-            return sumDecimalValues(convertToDecimalList(numerals));
-        if(numerals.equals("" + NUMERAL_X + NUMERAL_I + NUMERAL_I))
-            return sumDecimalValues(convertToDecimalList(numerals));
-        if(numerals.equals("" + NUMERAL_X + NUMERAL_I))
-            return sumDecimalValues(convertToDecimalList(numerals));
-        if(numerals.equals("" + NUMERAL_X))
-            return sumDecimalValues(convertToDecimalList(numerals));
         if(numerals.equals("" + NUMERAL_I + NUMERAL_X))
             return 9;
-        if(numerals.equals("" + NUMERAL_V + NUMERAL_I + NUMERAL_I + NUMERAL_I))
-            return sumDecimalValues(convertToDecimalList(numerals));
-        if(numerals.equals("" + NUMERAL_V + NUMERAL_I + NUMERAL_I))
-            return sumDecimalValues(convertToDecimalList(numerals));
-        if(numerals.equals("" + NUMERAL_V + NUMERAL_I))
-            return sumDecimalValues(convertToDecimalList(numerals));
         if(numerals.equals("" + NUMERAL_I + NUMERAL_V))
             return 4;
-        if(numerals.equals("" + NUMERAL_V))
-            return sumDecimalValues(convertToDecimalList(numerals));
-        return numerals.length();
+        return sumDecimalValues(convertToDecimalList(numerals));
     }
 
     public static void initialiseNumeralToValueMap() {
