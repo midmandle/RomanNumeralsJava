@@ -9,7 +9,7 @@ public class ConvertsSingleNumeralToDecimalTest {
     }
 
     @Test
-    public void converts_numeral_II_to_decimal_2() {
+    public void converts_numerals_II_to_decimal_2() {
         assertEquals(2, NumeralConverter.convert("II"));
     }
 }
